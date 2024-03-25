@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  overflow: auto;
+  object-fit: cover;
+}
+body {
+  background-image: url("./assets/17947.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

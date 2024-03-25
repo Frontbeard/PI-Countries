@@ -1,0 +1,40 @@
+/* Estilo para la barra de navegación */
+nav {
+  background-color: #333; /* Fondo de color gris oscuro */
+  padding: 10px;
+}
+
+/* Estilos para la lista de elementos de navegación */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centrar contenido verticalmente */
+}
+
+/* Estilos para los botones de la barra de navegación */
+.btnBar {
+  background-color: #008080; /* Fondo de color turquesa */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 1em;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para los enlaces dentro de los botones */
+.btnBar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos para los botones de la barra de navegación al pasar el ratón */
+.btnBar:hover {
+  background-color: #fff; /* Fondo de color blanco */
+  color: #008080; /* Texto en color turquesa */
+  transition: background-color 1s ease, color 1s ease;
+}

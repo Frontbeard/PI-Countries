@@ -1,0 +1,34 @@
+/* Estilo de mapa mundial o terrario */
+body {
+    background-color: #f0f0f0; /* Color de fondo gris claro */
+  }
+  
+  .countryDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .countryDetail img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid #333; /* Borde en negro */
+  }
+  
+  .countryDetail h1 {
+    margin: 10px;
+    font-size: 20px;
+    color: #ffffff; /* Texto en negro */
+  }
+  
+  .countryDetail h1:first-child {
+    margin-top: 0;
+  }
+  
+  .countryDetail h1:last-child {
+    margin-bottom: 0;
+  }
+  
