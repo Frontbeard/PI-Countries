@@ -86,9 +86,4 @@ const getActivities = async (req, res) => {
   }
 };
 
-
-const deleteActivity = async (req, res) => {
-  
-}
-
 module.exports = { postActivity, getActivities };

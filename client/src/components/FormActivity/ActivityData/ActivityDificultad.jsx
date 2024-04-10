@@ -19,7 +19,7 @@ const activityDificultyField = () => {
       <input
         type="text"
         value={dificulty}
-        placeholder="Dificultad (Valor numerico de 1 al 10)"
+        placeholder="Dificultad (Valor numerico de 1 a 5)"
         name="dificulty"
         onChange={handleDificultyChange}
       />

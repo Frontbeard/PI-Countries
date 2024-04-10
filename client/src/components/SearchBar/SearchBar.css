@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 /* Estilos para el input de la barra de búsqueda */
@@ -14,23 +13,5 @@
   font-size: 1.2rem;
   padding: 10px;
   width: 200px;
-}
-
-/* Estilos para el botón de la barra de búsqueda */
-.btnBar {
-  background-color: #008080; /* Fondo de color turquesa */
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.2rem;
-  margin-left: 1em;
-  padding: 10px 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos para el botón de la barra de búsqueda al pasar el ratón */
-.btnBar:hover {
-  background-color: #fff; /* Fondo de color blanco */
-  color: #008080; /* Texto en color turquesa */
-  transition: background-color 1s ease, color 1s ease;
+  margin-right: 5px;
 }

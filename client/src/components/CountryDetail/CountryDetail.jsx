@@ -29,7 +29,7 @@ const CountryDetail = () => {
   }, [idPais]);
 
   return (
-    <div>
+    <div className="detallesdelpais">
       <img src={country.flagImage && country.flagImage} alt={country.name} />
       <div>
         <h1>ID: "{country.id && country.id}"</h1>

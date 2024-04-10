@@ -1,6 +1,6 @@
 export const validateName = (name) => {
-  if (name.length > 0 && name.length < 35) return true;
-  return false;
+  const regex = /^[a-zA-Z\s]+$/;
+  return regex.test(name) && name.length > 0 && name.length < 35;
 };
 
 export const validateDifficulty = (number) => {

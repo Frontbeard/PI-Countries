@@ -1,7 +1,7 @@
 const { Country, Activity } = require("../db");
 const { Op, literal } = require("sequelize");
 
-const getCountryById = async (req, res) => { 
+const getCountryById = async (req, res) => {
   try {
     const { idPais } = req.params;
     const country = await Country.findOne({
@@ -40,62 +40,30 @@ const getCountryByName = async (req, res) => {
   }
 };
 
-const getFiltersObject = (filters) => {
-  const filtersObject = {};
-
-  if (!filters) {
-    return filtersObject;
-  }
-
-  if (!Array.isArray(filters)) {
-    const [key, value] = filters.split("=");
-    filtersObject[key] = value;
-  } else {
-    filters.forEach((filter) => {
-      const [key, value] = filter.split("=");
-      filtersObject[key] = value;
-    });
-  }
-
-  return filtersObject;
-};
-
 async function getAllCountries(req, res) {
   const page = parseInt(req.query.page) || 1;
   const pageSize = 10;
   const startIndex = (page - 1) * pageSize;
-  const filters = req.query.filters || "";
-  const sortBy = req.query.order || "";
+  const continent = req.query.continent || "";
+  const sort = req.query.sort || "";
+  const sortOptions = {
+    alphabeticalASC: ["name", "ASC"],
+    alphabeticalDESC: ["name", "DESC"],
+    populationASC: ["population", "ASC"],
+    populationDESC: ["population", "DESC"],
+  };
 
-  const conditions = getFiltersObject(filters);
-  const sortConditions = getFiltersObject(sortBy);
-
-  const whereClause = {};
-
-  //verifico si conditions tiene claves definidas
-  if (Object.keys(conditions).length > 0) {
-    //itero sobre cada clave de dichas conditions
-    Object.keys(conditions).forEach((key) => {
-      if (key === "continent") {
-        whereClause[key] = conditions[key];
-      }
-    });
-  }
   try {
     const countries = await Country.findAll({
-      where: whereClause, //guarda todos los filtros //
+      where: continent && { continent }, //guarda todos los filtros //
       offset: startIndex,
       limit: pageSize,
-      order: Object.entries(sortConditions).map(([key, value]) => {
-        if (key === "population") {
-          return [literal("population"), value];
-        } else if (key === "name") {
-          return ["name", value];
-        }
-      }),
+      order: sort && [sortOptions[sort]],
     });
 
-    const totalRecords = await Country.count({ where: whereClause });
+    const totalRecords = await Country.count({
+      where: continent && { continent },
+    });
     const totalPages = Math.ceil(totalRecords / pageSize);
 
     res.status(200).json({ countries, totalPages, page });

@@ -36,7 +36,7 @@ const SearchBar = ({ setSearchResults }) => {
         placeholder="Ingrese un país"
       />
       <button className="btnBar" onClick={() => onSearch(name)}>
-        Mostrar
+        Buscar
       </button>
     </div>
   );

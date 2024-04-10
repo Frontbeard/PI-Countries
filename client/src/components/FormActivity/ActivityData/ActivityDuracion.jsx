@@ -19,7 +19,7 @@ const activityDurationField = () => {
       <input
         type="text"
         value={duration}
-        placeholder="Duración de la actividad (Valor numerico en horas y menor a 5)"
+        placeholder="Duración de la actividad (Valor numerico en horas de 1 a 5)"
         name="duration"
         onChange={handleDurationChange}
       />

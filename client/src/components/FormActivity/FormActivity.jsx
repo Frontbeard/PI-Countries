@@ -61,12 +61,14 @@ const FormActivity = () => {
       )
     );
   };
+  
   const isFormValid =
     durationValidation &&
     difficultyValidation &&
     nameValidation &&
     selectedSeason !== "" &&
     notEmptyCountry !== "";
+    console.log(isFormValid)
 
   return (
     <div className="form-container">
@@ -88,7 +90,7 @@ const FormActivity = () => {
         <input
           type="text"
           value={duration}
-          placeholder="Duración de la actividad (Valor en horas menor a 10)"
+          placeholder="Duración de la actividad (Valor en horas de 1 a 5)"
           name="duration"
           onChange={handleDurationChange}
         />
@@ -98,7 +100,7 @@ const FormActivity = () => {
         <input
           type="text"
           value={difficulty}
-          placeholder="Dificultad (Valor numerico de 1 al 10)"
+          placeholder="Dificultad (Valor numerico de 1 a 5)"
           name="difficulty"
           onChange={handleDifficultyChange}
         />
